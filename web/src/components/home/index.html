@@ -1,0 +1,44 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>闪光图片</title>
+  <style>
+    .overimg {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      box-shadow: 0 0 10px #FFF;
+      overflow: hidden;
+    }
+
+    .light {
+
+      position: absolute;
+      left: -180px;
+      top: 0;
+      width: 180px;
+      height: 90px;
+      background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgba(255, 255, 255, 0));
+      transform: skewx(-25deg);
+
+    }
+
+    .overimg:hover .light {
+      left: 180px;
+
+      transition: 2.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="overimg">
+    <a><img src="http://www.nowamagic.net/librarys/images/201402/2014_02_15_01.jpg"></a>
+    <i class="light"></i>
+  </p>
+</body>
+
+</html>
