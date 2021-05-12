@@ -8,6 +8,9 @@
         :key="index"
         ref="img"
       >
+        <div class="shade">
+          <i class="iconfont icon-eye"></i>
+        </div>
         <img :src="item.src" alt="" />
       </div>
       <footer
@@ -31,7 +34,7 @@ export default {
   data() {
     return {
       images: [],
-      imgWidth: 220, //图片的宽度
+      imgWidth: 270, //图片的宽度
       heightArray: [], //存储高度数组，用于判断最小高度的图片位置
       isLoad: true, //是否继续加载图片
       surplusW: 0, //是否存在剩余宽度
@@ -43,7 +46,10 @@ export default {
     async fetchPics() {
       const res = await this.$http.get("/pictures");
       this.images = res.data;
-      this.loadImgHeight();
+      let that = this;
+      setTimeout(function () {
+        that.loadImgHeight();
+      }, 100);
     },
     /**
      * 预加载图片资源
@@ -105,7 +111,19 @@ export default {
         //定位
         parentDom[i].style.transform = "50px";
         parentDom[i].style.position = "absolute";
+        // let realaa;
+        // if (index < 2) {
+        //   console.log("第一行");
+        //   realaa = minHeight;
+        // } else {
+        //   console.log("第n行");
+        //   realaa = minHeight;
+        // }
+        // console.log("real" + realaa);
+
+        // parentDom[i].style.top = realaa + "px";
         parentDom[i].style.top = minHeight + "px";
+        parentDom[i].style.margin;
         parentDom[i].style.left =
           this.imgWidth * index + +(Math.floor(this.surplusW / 2) + 30) + "px";
         this.heightArray[index] += currHeight;
@@ -117,6 +135,7 @@ export default {
   created() {
     this.fetchPics();
   },
+  mounted() {},
 };
 </script>
 
@@ -128,7 +147,7 @@ export default {
 }
 .waterFall-box {
   border: 1px red solid;
-  width: 950px;
+  width: 1200px;
   left: 50%;
   transform: translate(-50%);
   position: relative;
@@ -136,21 +155,63 @@ export default {
 }
 
 .waterFall-box .img-box {
-  width: 210px;
+  background: #fff;
+  width: 260px;
   vertical-align: top;
   display: block;
   float: left;
+  border: 1px #5c5c5c solid;
+  border-radius: 5px;
+  animation: imgBox 0.5s ease-in-out;
+  &:hover {
+    .shade {
+      width: 100%;
+      height: 100%;
+      transition: all 0.2s ease-in-out;
+      background-image: linear-gradient(
+        135deg,
+        rgba(255, 0, 121, 0.77),
+        rgba(255, 131, 87, 0.61)
+      );
+      color: #eee;
+      border-radius: 5px;
+      .icon-eye {
+        display: block;
+      }
+    }
+  }
+}
+.shade {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  width: 100%;
+  height: 0;
+  opacity: 0.77;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.77), transparent);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .icon-eye {
+    display: none;
+    font-size: 25px;
+  }
 }
 
 .waterFall-box .img-box img {
-  width: 100%;
-  animation: imgBox 0.5s ease-in-out;
+  margin-top: 5px;
+  width: 95%;
 }
 
-.waterFall-box .img-box img:hover {
+.waterFall-box .img-box:hover {
+  z-index: 99;
   transform: translateY(-3px);
-  transition: transform 0.5s ease-in-out;
-  box-shadow: 0 20px 20px 2px #737373;
+  transition: transform 0.1s ease-in-out;
+  box-shadow: 0 5px 10px 0px #a3a3a3;
 }
 
 @keyframes imgBox {

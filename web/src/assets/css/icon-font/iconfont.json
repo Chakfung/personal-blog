@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "142368",
+      "name": "transfer",
+      "font_class": "transfer",
+      "unicode": "e99d",
+      "unicode_decimal": 59805
+    },
+    {
+      "icon_id": "815502",
+      "name": "close",
+      "font_class": "close1",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "4765837",
+      "name": "undo",
+      "font_class": "undo",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "15066965",
+      "name": "transfer",
+      "font_class": "transfer1",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "18592505",
+      "name": "redo",
+      "font_class": "redo",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "10318793",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "12365731",
+      "name": "Add to download",
+      "font_class": "download",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "15431002",
+      "name": "star1",
+      "font_class": "star",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "18401738",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "19258242",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "1029906",
       "name": "tag",
       "font_class": "tag",

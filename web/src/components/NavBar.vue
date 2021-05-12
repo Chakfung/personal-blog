@@ -19,6 +19,8 @@
           <li @click="goGallery()">Gallery</li>
           <li @click="cc()">Blog</li>
           <li @click="goCommunity()">Community</li>
+          <li @click="goLoad()">Load</li>
+          <li @click="goRegister()">Register</li>
         </ul>
       </div>
     </header>
@@ -41,8 +43,13 @@ export default {
     goGallery() {
       this.$router.push("/gallery");
     },
+    goRegister() {
+      this.$router.push("/register");
+    },
+    goLoad() {
+      this.$router.push("/load");
+    },
     handleScroll() {
-      console.log(document.documentElement.scrollTop);
       if (document.documentElement.scrollTop > 250) {
         this.navFix = true;
       } else {
@@ -59,6 +66,7 @@ export default {
 
 <style lang="scss">
 .nav-bar {
+  min-width: 1000px;
   width: 100%;
   z-index: 100;
   display: none;
