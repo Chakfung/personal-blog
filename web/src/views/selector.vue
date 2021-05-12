@@ -63,6 +63,30 @@
   </div>
 </template>
 
+:personel="options" :select="select" @getChildVal = "getChildVal"
+
+data 
+select:[3,5,6,7]
+options: []
+
+
+mounted this.addPerson()
+
+methods
+ getChildVal(val) {
+   this.result = val 
+ }
+ addPerson() {
+   const arr = ['陈植','灵梦']
+   const fromCharCode = String.fromCharCode
+   arr.forEach((item,i)=> {
+     this.option.push({
+       value : i +1,
+       label:`${item} < ${i+1} > ${fromCharCode(i+65)}`
+     })
+   })
+ }
+
 <script>
 import PinyinMatch from "pinyin-match";
 export default {
